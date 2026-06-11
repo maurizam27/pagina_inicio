@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top, #161920, #0b0c10);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* Contenedor adaptativo para formato horizontal */
+.dashboard-container {
+    width: 92vw;
+    max-width: 1300px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    padding: 20px 0;
+}
+
+/* Estilos del Header */
+.main-header {
+    text-align: center;
+}
+
+#clock {
+    font-size: 4rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+#greeting {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-top: 5px;
+    color: #e2e8f0;
+}
+
+#date-display {
+    font-size: 0.95rem;
+    color: #718096;
+    margin-top: 4px;
+    margin-bottom: 20px;
+}
+
+/* Buscador centrado */
+.search-box input {
+    width: 380px;
+    padding: 11px 20px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.04);
+    color: #ffffff;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.search-box input:focus {
+    width: 440px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+/* Grid de 3 bloques horizontales */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+/* Tarjetas con efecto Esmerilado (Glassmorphism) */
+.card {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    padding: 22px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.card h3 {
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: #a0aec0;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Grupo de iconos flexible */
+.icon-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Botones contenedores de iconos */
+.icon-group a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 52px;
+    height: 52px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 10px;
+    color: #cbd5e0;
+    font-size: 1.6rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.icon-group a:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    transform: scale(1.08);
+}
