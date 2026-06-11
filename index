@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startpage Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Iconos vectoriales gratuitos -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        
+        <!-- HEADER: Reloj, Saludo y Buscador -->
+        <header class="main-header">
+            <div id="clock">00:00</div>
+            <div id="greeting">¡Hola!</div>
+            <div id="date-display"></div> 
+            
+            <div class="search-box">
+                <form action="https://www.google.com/search" method="get">
+                    <input type="text" name="q" placeholder="Buscar en Google..." autofocus autocomplete="off">
+                </form>
+            </div>
+        </header>
+
+        <!-- GRID HORIZONTAL DE 3 PILARES -->
+        <main class="dashboard-grid">
+
+            <!-- Bloque 1: Obligaciones -->
+            <section class="card">
+                <h3><i class='bx bx-book-bookmark'></i> Obligaciones</h3>
+                <div class="icon-group">
+                    <!-- Aquí colocarás tus links de la PUCP, Workspace, Drive, etc. -->
+                    <a href="#" title="Ejemplo"><i class='bx bx-link-alt'></i></a>
+                    <a href="#" title="Ejemplo"><i class='bx bx-link-alt'></i></a>
+                    <a href="#" title="Ejemplo"><i class='bx bx-link-alt'></i></a>
+                </div>
+            </section>
+
+            <!-- Bloque 2: Creación -->
+            <section class="card">
+                <h3><i class='bx bx-code-block'></i> Creación</h3>
+                <div class="icon-group">
+                    <!-- Aquí colocarás GitHub, IAs, Canva, LinkedIn, etc. -->
+                    <a href="#" title="Ejemplo"><i class='bx bx-link-alt'></i></a>
+                    <a href="#" title="Ejemplo"><i class='bx bx-link-alt'></i></a>
+                </div>
+            </section>
+
+            <!-- Bloque 3: Chill & Media -->
+            <section class="card">
+                <h3><i class='bx bx-party'></i> Chill & Media</h3>
+                <div class="icon-group">
+                    <!-- Aquí colocarás redes, streaming, YouTube, etc. -->
+                    <a href="#" title="Ejemplo"><i class='bx bx-link-alt'></i></a>
+                    <a href="#" title="Ejemplo"><i class='bx bx-link-alt'></i></a>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Conexión con la lógica JS -->
+    <script src="script.js"></script>
+</body>
+</html>
