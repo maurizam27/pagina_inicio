@@ -224,13 +224,11 @@ body {
 }
 
 
-/* Asegura que los logos de imagen compartan el tamaño y comportamiento de los iconos */
-/* Corrección para que los logos oficiales se vean nítidos y perfectos */
+/* Corrección absoluta para logos en alta resolución */
 .icon-group a img {
-    width: 32px;         /* Tamaño ideal para que sea visible pero no se pixele */
-    height: 32px;
+    width: 28px;         /* Tamaño perfecto dentro del contenedor de 52px */
+    height: 28px;
     object-fit: contain; /* Evita que el logo se deforme o estire */
-    border-radius: 6px;  /* Le da una curvatura suave a las esquinas de los logos cuadrados */
-    image-rendering: -webkit-optimize-contrast; /* Optimiza la nitidez en pantallas de tablets */
-    image-rendering: crisp-edges;
+    image-rendering: -webkit-optimize-contrast; /* Fuerza el renderizado nítido en tablets */
+    image-rendering: pixelated; /* Si la imagen es pequeña, evita el difuminado borroso */
 }
