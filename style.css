@@ -238,9 +238,10 @@ body {
     width: 100%;
     margin-top: 15px;
     border-radius: 12px;
-    overflow: hidden; /* Fuerza a que el mapa/calendario respete las esquinas curvas */
-    background: rgba(255, 255, 255, 0.02); /* Un toque sutil antes de que cargue */
+    overflow: hidden; /* Esto corta todo lo que se salga de las esquinas redondeadas */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Le da un borde fino premium que combina con tus tarjetas */
 }
+
 
 /* Aplicamos un filtro para suavizar los colores brillantes si Google Calendar carga muy claro */
 .calendar-container iframe {
@@ -248,7 +249,13 @@ body {
     background-color: transparent !important;
     opacity: 0.85;
     transition: opacity 0.3s ease;
+    
+    /* 🛠️ Nuevas propiedades para limpiar los bordes extraños */
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
 }
+
 
 
 .calendar-container iframe:hover {
