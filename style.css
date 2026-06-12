@@ -133,3 +133,89 @@ body {
     color: #ffffff;
     transform: scale(1.08);
 }
+
+/* Preparamos el enlace como contenedor de la etiqueta */
+.tooltip-link {
+    position: relative;
+}
+
+/* Estilo del cartelito flotante */
+.tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    bottom: 125%; /* Lo posiciona justo encima del icono */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    text-align: center;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    white-space: nowrap; /* Evita que el texto se rompa en dos líneas */
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none; /* Asegura que el cartelito no estorbe al hacer clic */
+}
+
+/* Flecha pequeña debajo del cartelito */
+.tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.85) transparent transparent transparent;
+}
+
+/* Muestra el cartelito al pasar el mouse (PC) o al mantener presionado (Tablet) */
+.tooltip-link:hover .tooltip-text,
+.tooltip-link:focus .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+/* Preparamos el enlace como contenedor de la etiqueta */
+.tooltip-link {
+    position: relative;
+}
+
+/* Estilo del cartelito flotante */
+.tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    bottom: 125%; /* Lo posiciona justo encima del icono */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    text-align: center;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    white-space: nowrap; /* Evita que el texto se rompa en dos líneas */
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none; /* Asegura que el cartelito no estorbe al hacer clic */
+}
+
+/* Flecha pequeña debajo del cartelito */
+.tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.85) transparent transparent transparent;
+}
+
+/* Muestra el cartelito al pasar el mouse (PC) o al mantener presionado (Tablet) */
+.tooltip-link:hover .tooltip-text,
+.tooltip-link:focus .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
