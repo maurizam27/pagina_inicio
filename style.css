@@ -223,12 +223,10 @@ body {
     opacity: 1;
 }
 
-
-/* Corrección absoluta para logos en alta resolución */
+/* Configuración para optimizar imágenes de alta resolución a tamaño miniatura */
 .icon-group a img {
-    width: 28px;         /* Tamaño perfecto dentro del contenedor de 52px */
+    width: 28px;         
     height: 28px;
-    object-fit: contain; /* Evita que el logo se deforme o estire */
-    image-rendering: -webkit-optimize-contrast; /* Fuerza el renderizado nítido en tablets */
-    image-rendering: pixelated; /* Si la imagen es pequeña, evita el difuminado borroso */
+    object-fit: contain; 
+    image-rendering: auto; /* Cambiamos a 'auto' para que suavice los bordes de imágenes grandes */
 }
