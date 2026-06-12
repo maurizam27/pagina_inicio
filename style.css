@@ -214,8 +214,6 @@ body {
     
 }
 
-
-
 /* Muestra el cartelito al pasar el mouse (PC) o al mantener presionado (Tablet) */
 .tooltip-link:hover .tooltip-text,
 .tooltip-link:focus .tooltip-text {
@@ -229,4 +227,28 @@ body {
     height: 30px;
     object-fit: contain; /* Mantiene las proporciones perfectas del escudo y del triángulo */
     image-rendering: auto; /* Suaviza los bordes de manera premium */
+}
+
+/* Contenedor del widget de calendario */
+.widget-calendar {
+    padding: 20px;
+}
+
+.calendar-container {
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 12px;
+    overflow: hidden; /* Fuerza a que el mapa/calendario respete las esquinas curvas */
+    background: rgba(255, 255, 255, 0.02); /* Un toque sutil antes de que cargue */
+}
+
+/* Aplicamos un filtro para suavizar los colores brillantes si Google Calendar carga muy claro */
+.calendar-container iframe {
+    filter: invert(90%) hue-rotate(180deg); /* 💡 Truco Pro: Invierte los colores brillantes a modo oscuro automáticamente */
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+}
+
+.calendar-container iframe:hover {
+    opacity: 1;
 }
