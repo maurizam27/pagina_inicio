@@ -223,10 +223,10 @@ body {
     opacity: 1;
 }
 
-/* Configuración para optimizar imágenes de alta resolución a tamaño miniatura */
+/* Configuración definitiva para optimizar logos locales de alta definición */
 .icon-group a img {
-    width: 28px;         
-    height: 28px;
-    object-fit: contain; 
-    image-rendering: auto; /* Cambiamos a 'auto' para que suavice los bordes de imágenes grandes */
+    width: 30px;         /* Tamaño ideal para que destaque dentro del botón */
+    height: 30px;
+    object-fit: contain; /* Mantiene las proporciones perfectas del escudo y del triángulo */
+    image-rendering: auto; /* Suaviza los bordes de manera premium */
 }
