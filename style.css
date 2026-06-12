@@ -210,7 +210,11 @@ body {
     border-width: 5px;
     border-style: solid;
     border-color: rgba(0, 0, 0, 0.85) transparent transparent transparent;
+
+    
 }
+
+
 
 /* Muestra el cartelito al pasar el mouse (PC) o al mantener presionado (Tablet) */
 .tooltip-link:hover .tooltip-text,
@@ -219,3 +223,11 @@ body {
     opacity: 1;
 }
 
+
+/* Asegura que los logos de imagen compartan el tamaño y comportamiento de los iconos */
+.icon-group a img {
+    width: 26px;  /* Ajusta el tamaño para que combine con el tamaño del icono de texto */
+    height: 26px;
+    object-fit: contain;
+    pointer-events: none; /* Evita conflictos con el clic */
+}
