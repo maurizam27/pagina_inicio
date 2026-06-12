@@ -244,10 +244,12 @@ body {
 
 /* Aplicamos un filtro para suavizar los colores brillantes si Google Calendar carga muy claro */
 .calendar-container iframe {
-    filter: invert(90%) hue-rotate(180deg); /* 💡 Truco Pro: Invierte los colores brillantes a modo oscuro automáticamente */
+    filter: invert(90%) hue-rotate(180deg) contrast(120%) !important;
+    background-color: transparent !important;
     opacity: 0.85;
     transition: opacity 0.3s ease;
 }
+
 
 .calendar-container iframe:hover {
     opacity: 1;
