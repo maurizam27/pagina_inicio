@@ -56,10 +56,18 @@ body {
 }
 
 /* Buscador adaptado a la celda izquierda */
-.search-box input {
+.search-box {
     width: 100%;
-    max-width: 300px; /* Reducido para que no se desborde */
-    padding: 10px 16px;
+}
+
+.search-box form {
+    width: 100%;
+}
+
+/* Buscador acoplado perfectamente al ancho de la celda */
+.search-box input {
+    width: 100%; /* Ocupa todo el espacio disponible de la columna */
+    padding: 11px 20px;
     border-radius: 24px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     background: rgba(255, 255, 255, 0.04);
@@ -67,14 +75,13 @@ body {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     text-align: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background 0.3s ease, border-color 0.3s ease; /* Eliminamos cambios de tamaño */
 }
 
 .search-box input:focus {
     outline: none;
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(255, 255, 255, 0.2);
-    /* Eliminamos el max-width y la sombra para que no se mueva ni brille exageradamente */
 }
 
 /* ==========================================================================
@@ -89,6 +96,7 @@ body {
 }
 
 /* BASE DE TODAS LAS TARJETAS (Recupera el estilo esmerilado de la captura anterior) */
+/* BASE DE TODAS LAS TARJETAS */
 .card {
     background: rgba(255, 255, 255, 0.02) !important;
     backdrop-filter: blur(16px) !important;
@@ -96,14 +104,14 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.06) !important;
     border-radius: 14px;
     padding: 22px;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    transition: border-color 0.3s ease;
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* Evita que las imágenes se desborden de la tarjeta */
+    /* ELIMINADO overflow: hidden para permitir que los tooltips sean visibles */
 }
 
 .card:hover {
-    /* Solo mantenemos el cambio sutil de color en el borde, eliminamos el salto */
+    transform: none !important; /* Forzamos a que la tarjeta se quede completamente quieta */
     border-color: rgba(255, 255, 255, 0.12) !important;
 }
 
@@ -232,6 +240,7 @@ body {
     opacity: 0;
     transition: opacity 0.2s ease;
     pointer-events: none;
+    z-index: 99; /* Forzamos a que se dibuje por encima de cualquier elemento */
 }
 
 .tooltip-text::after {
