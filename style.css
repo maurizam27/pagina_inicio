@@ -1,7 +1,37 @@
-/* Estilos del Header (Fuera del grid, centrado y libre) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top, #161920, #0b0c10);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* Contenedor adaptativo para formato horizontal */
+.dashboard-container {
+    width: 92vw;
+    max-width: 1300px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    padding: 20px 0;
+}
+
+/* ==========================================================================
+   ESTILOS DEL RELOJ Y BUSCADOR INDEPENDIENTE (Aspecto Original Centrado)
+   ========================================================================== */
+
 .main-header {
     text-align: center;
-    margin-bottom: 30px; /* Espacio premium entre el reloj y el inicio de las tarjetas */
+    margin-bottom: 10px;
 }
 
 #clock {
@@ -25,7 +55,7 @@
     margin-bottom: 20px;
 }
 
-/* Buscador centrado original */
+/* Buscador centrado */
 .search-box input {
     width: 380px;
     padding: 11px 20px;
@@ -45,4 +75,195 @@
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+/* ==========================================================================
+   CONFIGURACIÓN DEL GRID 3x3 
+   ========================================================================== */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    grid-template-rows: minmax(200px, auto) minmax(220px, auto) minmax(220px, auto); /* 3 filas */
+    gap: 24px;
+}
+
+/* BASE DE TODAS LAS TARJETAS (Recupera el estilo esmerilado de la captura anterior) */
+.card {
+    background: rgba(255, 255, 255, 0.02) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-radius: 14px;
+    padding: 22px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Evita que las imágenes se desborden de la tarjeta */
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.card h3 {
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: #a0aec0;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ==========================================================================
+   MAPEO DE COORDENADAS DEL GRID 
+   ========================================================================== */
+
+/* Fila 1 (Columna 1 vacía para balancear el reloj) */
+.widget-youtube {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.widget-pomodoro {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+/* Fila 2 */
+.apps-1 {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.apps-2 {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* Fila 3 */
+.apps-3 {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.apps-4 {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+/* Columna 3: Agenda extendida verticalmente */
+.widget-calendar {
+    grid-column: 3;
+    grid-row: 2 / span 2; /* Ocupa fila 2 y 3 */
+}
+
+/* ==========================================================================
+   ESTILOS DE ELEMENTOS INTERNOS (Iconos, Enlaces y Herramientas)
+   ========================================================================== */
+
+/* Grupo de iconos flexible */
+.icon-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Botones contenedores de iconos */
+.icon-group a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 52px;
+    height: 52px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 10px;
+    color: #cbd5e0;
+    font-size: 1.6rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    overflow: hidden; /* Protege los bordes redondos de las imágenes */
+}
+
+.icon-group a:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    transform: scale(1.08);
+}
+
+/* Forzar tamaño HD controlado para las imágenes de logos locales */
+.icon-group a img {
+    width: 30px !important;
+    height: 30px !important;
+    object-fit: contain !important;
+    image-rendering: auto;
+}
+
+/* Tooltips */
+.tooltip-link {
+    position: relative;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    text-align: center;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+.tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.85) transparent transparent transparent;
+}
+
+.tooltip-link:hover .tooltip-text,
+.tooltip-link:focus .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Contenedor adaptativo del Calendario */
+.calendar-container {
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    flex-grow: 1;
+    display: flex;
+}
+
+.calendar-container iframe {
+    width: 100%;
+    height: 100% !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    filter: invert(90%) hue-rotate(180deg) contrast(120%) !important;
+    background-color: transparent !important;
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+}
+
+.calendar-container iframe:hover {
+    opacity: 1;
 }
