@@ -73,10 +73,11 @@ body {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
 }
 
-/* Grid de 3 bloques horizontales */
+/* Grid escalable de 3x3 */
 .dashboard-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    grid-template-rows: repeat(3, minmax(250px, auto)); /* 3 filas con alto mínimo de 250px */
     gap: 24px;
 }
 
@@ -89,6 +90,8 @@ body {
     border-radius: 14px;
     padding: 22px;
     transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
