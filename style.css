@@ -71,11 +71,10 @@ body {
 }
 
 .search-box input:focus {
-    max-width: 320px; /* Se expande un poco menos al hacer clic */
     outline: none;
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+    /* Eliminamos el max-width y la sombra para que no se mueva ni brille exageradamente */
 }
 
 /* ==========================================================================
@@ -104,7 +103,7 @@ body {
 }
 
 .card:hover {
-    transform: translateY(-4px);
+    /* Solo mantenemos el cambio sutil de color en el borde, eliminamos el salto */
     border-color: rgba(255, 255, 255, 0.12) !important;
 }
 
@@ -195,7 +194,7 @@ body {
     font-size: 1.6rem;
     text-decoration: none;
     transition: all 0.2s ease;
-    overflow: hidden; /* Protege los bordes redondos de las imágenes */
+    /* Eliminamos el overflow: hidden para dejar salir los tooltips nuevamente */
 }
 
 .icon-group a:hover {
