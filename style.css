@@ -322,27 +322,7 @@ body {
     opacity: 1; /* Se ilumina completamente al pasar el mouse */
 }
 
-/* --- ADAPTACIÓN RESPONSIVA --- */
-
-/* Para tablets (pantallas medianas) - Pasa de 3 a 2 columnas */
-@media (max-width: 992px) {
-    .dashboard-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Para celulares (pantallas pequeñas) - Pasa todo a 1 sola columna */
-@media (max-width: 600px) {
-    .dashboard-grid {
-        grid-template-columns: 1fr; /* Todo apilado verticalmente */
-    }
-    
-    /* Ajustamos elementos dentro de las celdas para que no se desborden */
-    .card {
-        padding: 15px;
-    }
-
-    .pomodoro-timer {
+ .pomodoro-timer {
     display: flex;
     flex-direction: column;
     align-items: center;
