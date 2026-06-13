@@ -1,69 +1,34 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-}
-
-body {
-    background: radial-gradient(circle at top, #161920, #0b0c10);
-    color: #ffffff;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-x: hidden;
-}
-
-/* Contenedor adaptativo para formato horizontal */
-.dashboard-container {
-    width: 92vw;
-    max-width: 1300px;
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-    padding: 20px 0;
-}
-
-/* ==========================================================================
-   ESTILOS DEL RELOJ Y BUSCADOR (Ahora como Tarjeta Grid)
-   ========================================================================== */
-
-.widget-clock {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+/* Estilos del Header (Fuera del grid, centrado y libre) */
+.main-header {
     text-align: center;
-    padding: 20px;
+    margin-bottom: 30px; /* Espacio premium entre el reloj y el inicio de las tarjetas */
 }
 
 #clock {
-    font-size: 3.5rem; /* Ajustado ligeramente para no desbordar la tarjeta */
+    font-size: 4rem;
     font-weight: 300;
     letter-spacing: 1px;
     line-height: 1;
 }
 
 #greeting {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 400;
-    margin-top: 8px;
+    margin-top: 5px;
     color: #e2e8f0;
 }
 
 #date-display {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: #718096;
     margin-top: 4px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
-/* Buscador adaptado al ancho de su celda */
-.widget-clock .search-box input {
-    width: 100%;
-    max-width: 260px;
-    padding: 10px 16px;
+/* Buscador centrado original */
+.search-box input {
+    width: 380px;
+    padding: 11px 20px;
     border-radius: 24px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     background: rgba(255, 255, 255, 0.04);
@@ -74,91 +39,10 @@ body {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.widget-clock .search-box input:focus {
-    max-width: 290px;
+.search-box input:focus {
+    width: 440px;
     outline: none;
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
-}
-
-/* ==========================================================================
-   CONFIGURACIÓN DEL GRID Y COORDENADAS FIJAS (Boceto 3x3 definitivo)
-   ========================================================================== */
-
-.dashboard-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas exactamente iguales */
-    grid-template-rows: auto minmax(220px, auto) minmax(220px, auto); /* Alturas controladas por fila */
-    gap: 24px;
-}
-
-/* --- FILA 1 --- */
-.widget-clock {
-    grid-column: 1;
-    grid-row: 1;
-}
-
-.widget-youtube {
-    grid-column: 2;
-    grid-row: 1;
-}
-
-.widget-pomodoro {
-    grid-column: 3;
-    grid-row: 1;
-}
-
-/* --- COLUMNA 1 (Izquierda) --- */
-.apps-1 {
-    grid-column: 1;
-    grid-row: 2;
-}
-.apps-2 {
-    grid-column: 1;
-    grid-row: 3;
-}
-
-/* --- COLUMNA 2 (Centro) --- */
-.apps-3 {
-    grid-column: 2;
-    grid-row: 2;
-}
-.apps-4 {
-    grid-column: 2;
-    grid-row: 3;
-}
-
-/* --- COLUMNA 3 (Derecha) --- */
-.widget-calendar {
-    grid-column: 3;
-    grid-row: 2 / span 2; /* Comienza en la fila 2 y absorbe la fila 3 hacia abajo */
-    padding: 20px;
-}
-
-/* --- CONTENEDOR FLEXIBLE DEL CALENDARIO --- */
-.calendar-container {
-    width: 100%;
-    margin-top: 15px;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    flex-grow: 1;
-    display: flex;
-}
-
-.calendar-container iframe {
-    width: 100%;
-    height: 100% !important; /* Forza a ocupar el alto dinámico de la tarjeta doble */
-    border: none !important;
-    box-shadow: none !important;
-    outline: none !important;
-    filter: invert(90%) hue-rotate(180deg) contrast(120%) !important;
-    background-color: transparent !important;
-    opacity: 0.85;
-    transition: opacity 0.3s ease;
-}
-
-.calendar-container iframe:hover {
-    opacity: 1;
 }
