@@ -64,24 +64,17 @@ body {
     width: 100%;
 }
 
-/* Buscador acoplado perfectamente al ancho de la celda */
 .search-box input {
-    width: 100%; /* Ocupa todo el espacio disponible de la columna */
-    padding: 11px 20px;
-    border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
     background: rgba(255, 255, 255, 0.04);
-    color: #ffffff;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    text-align: center;
-    transition: background 0.3s ease, border-color 0.3s ease; /* Eliminamos cambios de tamaño */
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px; /* Igual al de las tarjetas */
+    backdrop-filter: blur(16px);
+    transition: border-color 0.3s ease;
 }
 
 .search-box input:focus {
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Un brillo sutil, sin agrandarse */
     outline: none;
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* ==========================================================================
