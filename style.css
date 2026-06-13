@@ -18,7 +18,7 @@ body {
 /* Contenedor adaptativo para formato horizontal */
 .dashboard-container {
     width: 95vw;
-    max-width: 1500px;
+    max-width: 1600px;
     display: flex;
     flex-direction: column;
     gap: 25px; /* Reducido de 35px a 15px para acercar todo */
@@ -93,7 +93,7 @@ body {
     grid-auto-rows: minmax(220px, auto);
     gap: 30px; /* Reducido de 15px a 10px */
     padding: 10px; /* Reducido de 20px a 10px */
-    max-width: 1500px;
+    max-width: 1600px;
     margin: 0 auto;
 }
 
