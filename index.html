@@ -10,23 +10,21 @@
 </head>
 <body>
 
-    <div class="dashboard-container">
+   <div class="dashboard-container">
         
-        <!-- HEADER: Reloj, Saludo y Buscador -->
-        <header class="main-header">
-            <div id="clock">00:00</div>
-            <div id="greeting">¡Hola!</div>
-            <div id="date-display"></div> 
-            
-            <div class="search-box">
-                <form action="https://www.google.com/search" method="get">
-                    <input type="text" name="q" placeholder="Buscar en Google..." autofocus autocomplete="off">
-                </form>
-            </div>
-        </header>
+        <main class="dashboard-grid">
 
-        <!-- GRID HORIZONTAL DE 3 PILARES -->
-<main class="dashboard-grid">
+            <section class="card widget-clock">
+                <div id="clock">00:00</div>
+                <div id="greeting">¡Hola!</div>
+                <div id="date-display"></div> 
+                
+                <div class="search-box">
+                    <form action="https://www.google.com/search" method="get">
+                        <input type="text" name="q" placeholder="Buscar en Google..." autofocus autocomplete="off">
+                    </form>
+                </div>
+            </section>
 
             <section class="card widget-youtube">
                 <h3><i class='bx bx-music'></i> Playlist YT</h3>
@@ -41,7 +39,6 @@
                     <p style="color: #718096; font-size: 0.9rem;">Próximamente...</p>
                 </div>
             </section>
-
 
             <section class="card apps-1">
                 <h3><i class='bx bx-book-bookmark'></i> Obligaciones</h3>
@@ -73,13 +70,6 @@
                 </div>
             </section>
 
-            <section class="card widget-calendar">
-                <h3><i class='bx bx-calendar'></i> Mi Agenda</h3>
-                <div class="calendar-container">
-                    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FLima&showPrint=0&showTitle=0&showNav=0&showCalendars=0&showTz=0&mode=AGENDA&src=bXphbWJyYW5vcnViaW5vc0BnbWFpbC5jb20&color=%23039be5" style="border-width:0" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>        
-                </div>
-            </section>
-
             <section class="card apps-3">
                 <h3><i class='bx bx-party'></i> Chill & Media</h3>
                 <div class="icon-group">
@@ -92,6 +82,13 @@
                 <h3><i class='bx bx-grid-alt'></i> APPS 4</h3>
                 <div class="icon-group">
                     <a href="#" title="Ejemplo"><i class='bx bx-link-alt'></i></a>
+                </div>
+            </section>
+
+            <section class="card widget-calendar">
+                <h3><i class='bx bx-calendar'></i> Mi Agenda</h3>
+                <div class="calendar-container">
+                    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FLima&showPrint=0&showTitle=0&showNav=0&showCalendars=0&showTz=0&mode=AGENDA&src=bXphbWJyYW5vcnViaW5vc0BnbWFpbC5jb20&color=%23039be5" style="border-width:0" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>        
                 </div>
             </section>
 
