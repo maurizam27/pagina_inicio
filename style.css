@@ -25,36 +25,45 @@ body {
     padding: 20px 0;
 }
 
-/* Estilos del Header */
-.main-header {
+/* ==========================================================================
+   ESTILOS DEL RELOJ Y BUSCADOR (Ahora como Tarjeta Grid)
+   ========================================================================== */
+
+.widget-clock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    padding: 20px;
 }
 
 #clock {
-    font-size: 4rem;
+    font-size: 3.5rem; /* Ajustado ligeramente para no desbordar la tarjeta */
     font-weight: 300;
     letter-spacing: 1px;
     line-height: 1;
 }
 
 #greeting {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 400;
-    margin-top: 5px;
+    margin-top: 8px;
     color: #e2e8f0;
 }
 
 #date-display {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: #718096;
     margin-top: 4px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
-/* Buscador centrado */
-.search-box input {
-    width: 380px;
-    padding: 11px 20px;
+/* Buscador adaptado al ancho de su celda */
+.widget-clock .search-box input {
+    width: 100%;
+    max-width: 260px;
+    padding: 10px 16px;
     border-radius: 24px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     background: rgba(255, 255, 255, 0.04);
@@ -65,215 +74,31 @@ body {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.search-box input:focus {
-    width: 440px;
+.widget-clock .search-box input:focus {
+    max-width: 290px;
     outline: none;
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
 }
 
-/* Grid escalable de 3x3 */
+/* ==========================================================================
+   CONFIGURACIÓN DEL GRID Y COORDENADAS FIJAS (Boceto 3x3 definitivo)
+   ========================================================================== */
+
 .dashboard-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
-    grid-template-rows: repeat(3, minmax(250px, auto)); /* 3 filas con alto mínimo de 250px */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas exactamente iguales */
+    grid-template-rows: auto minmax(220px, auto) minmax(220px, auto); /* Alturas controladas por fila */
     gap: 24px;
 }
 
-/* Tarjetas con efecto Esmerilado (Glassmorphism) */
-.card {
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 14px;
-    padding: 22px;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    display: flex;
-    flex-direction: column;
+/* --- FILA 1 --- */
+.widget-clock {
+    grid-column: 1;
+    grid-row: 1;
 }
 
-.card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(255, 255, 255, 0.12);
-}
-
-.card h3 {
-    font-size: 1.05rem;
-    font-weight: 400;
-    color: #a0aec0;
-    margin-bottom: 18px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-/* Grupo de iconos flexible */
-.icon-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-/* Botones contenedores de iconos */
-.icon-group a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 52px;
-    height: 52px;
-    background: rgba(255, 255, 255, 0.04);
-    border-radius: 10px;
-    color: #cbd5e0;
-    font-size: 1.6rem;
-    text-decoration: none;
-    transition: all 0.2s ease;
-}
-
-.icon-group a:hover {
-    background: rgba(255, 255, 255, 0.12);
-    color: #ffffff;
-    transform: scale(1.08);
-}
-
-/* Preparamos el enlace como contenedor de la etiqueta */
-.tooltip-link {
-    position: relative;
-}
-
-/* Estilo del cartelito flotante */
-.tooltip-text {
-    visibility: hidden;
-    position: absolute;
-    bottom: 125%; /* Lo posiciona justo encima del icono */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.85);
-    color: #fff;
-    text-align: center;
-    padding: 6px 10px;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    white-space: nowrap; /* Evita que el texto se rompa en dos líneas */
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    pointer-events: none; /* Asegura que el cartelito no estorbe al hacer clic */
-}
-
-/* Flecha pequeña debajo del cartelito */
-.tooltip-text::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: rgba(0, 0, 0, 0.85) transparent transparent transparent;
-}
-
-/* Muestra el cartelito al pasar el mouse (PC) o al mantener presionado (Tablet) */
-.tooltip-link:hover .tooltip-text,
-.tooltip-link:focus .tooltip-text {
-    visibility: visible;
-    opacity: 1;
-}
-/* Preparamos el enlace como contenedor de la etiqueta */
-.tooltip-link {
-    position: relative;
-}
-
-/* Estilo del cartelito flotante */
-.tooltip-text {
-    visibility: hidden;
-    position: absolute;
-    bottom: 125%; /* Lo posiciona justo encima del icono */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.85);
-    color: #fff;
-    text-align: center;
-    padding: 6px 10px;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    white-space: nowrap; /* Evita que el texto se rompa en dos líneas */
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    pointer-events: none; /* Asegura que el cartelito no estorbe al hacer clic */
-}
-
-/* Flecha pequeña debajo del cartelito */
-.tooltip-text::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: rgba(0, 0, 0, 0.85) transparent transparent transparent;
-
-    
-}
-
-/* Muestra el cartelito al pasar el mouse (PC) o al mantener presionado (Tablet) */
-.tooltip-link:hover .tooltip-text,
-.tooltip-link:focus .tooltip-text {
-    visibility: visible;
-    opacity: 1;
-}
-
-/* Configuración definitiva para optimizar logos locales de alta definición */
-.icon-group a img {
-    width: 30px;         /* Tamaño ideal para que destaque dentro del botón */
-    height: 30px;
-    object-fit: contain; /* Mantiene las proporciones perfectas del escudo y del triángulo */
-    image-rendering: auto; /* Suaviza los bordes de manera premium */
-}
-
-/* Contenedor del widget de calendario */
-.widget-calendar {
-    padding: 20px;
-}
-
-.calendar-container {
-    width: 100%;
-    margin-top: 15px;
-    border-radius: 12px;
-    overflow: hidden; /* Esto corta todo lo que se salga de las esquinas redondeadas */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Le da un borde fino premium que combina con tus tarjetas */
-}
-
-
-/* Aplicamos un filtro para suavizar los colores brillantes si Google Calendar carga muy claro */
-.calendar-container iframe {
-    filter: invert(90%) hue-rotate(180deg) contrast(120%) !important;
-    background-color: transparent !important;
-    opacity: 0.85;
-    transition: opacity 0.3s ease;
-    
-    /* 🛠️ Nuevas propiedades para limpiar los bordes extraños */
-    border: none !important;
-    box-shadow: none !important;
-    outline: none !important;
-}
-
-
-
-.calendar-container iframe:hover {
-    opacity: 1;
-}
-
-/* ==========================================================================
-   AJUSTES PARA LA DISTRIBUCIÓN ESCALABLE 3x3
-   ========================================================================== */
-
-/* ==========================================================================
-   COORDENADAS FIJAS PARA EL NUEVO MAPA 3x3
-   ========================================================================== */
-
-/* Fila 1: Obligamos a que dejen la primera columna libre (para alinearse con el reloj) */
 .widget-youtube {
     grid-column: 2;
     grid-row: 1;
@@ -284,19 +109,56 @@ body {
     grid-row: 1;
 }
 
-/* Fila 2 y 3: El Calendario se planta fijo en la columna 3 ocupando el alto restante */
-.widget-calendar {
-    grid-column: 3;
-    grid-row: 2 / span 2; /* Inicia en la fila 2 y se estira por 2 filas */
+/* --- COLUMNA 1 (Izquierda) --- */
+.apps-1 {
+    grid-column: 1;
+    grid-row: 2;
+}
+.apps-2 {
+    grid-column: 1;
+    grid-row: 3;
 }
 
-/* Forzar que el contenedor interno ocupe el espacio */
+/* --- COLUMNA 2 (Centro) --- */
+.apps-3 {
+    grid-column: 2;
+    grid-row: 2;
+}
+.apps-4 {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+/* --- COLUMNA 3 (Derecha) --- */
+.widget-calendar {
+    grid-column: 3;
+    grid-row: 2 / span 2; /* Comienza en la fila 2 y absorbe la fila 3 hacia abajo */
+    padding: 20px;
+}
+
+/* --- CONTENEDOR FLEXIBLE DEL CALENDARIO --- */
 .calendar-container {
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     flex-grow: 1;
     display: flex;
 }
 
 .calendar-container iframe {
     width: 100%;
-    height: 100% !important;
+    height: 100% !important; /* Forza a ocupar el alto dinámico de la tarjeta doble */
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    filter: invert(90%) hue-rotate(180deg) contrast(120%) !important;
+    background-color: transparent !important;
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+}
+
+.calendar-container iframe:hover {
+    opacity: 1;
 }
