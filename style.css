@@ -197,15 +197,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 52px;
-    height: 52px;
-    background: rgba(255, 255, 255, 0.04);
-    border-radius: 10px;
+    width: 55px; /* Un poco más grande para que el icono tenga aire */
+    height: 55px;
+    background: rgba(255, 255, 255, 0.03); /* Fondo muy sutil */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Borde casi invisible */
+    border-radius: 14px; /* Un poco más redondeado para modernidad */
     color: #cbd5e0;
-    font-size: 1.6rem;
     text-decoration: none;
-    transition: all 0.2s ease;
-    /* Eliminamos el overflow: hidden para dejar salir los tooltips nuevamente */
+    transition: all 0.3s ease;
 }
 
 .icon-group a:hover {
@@ -214,12 +213,22 @@ body {
     transform: scale(1.08);
 }
 
-/* Forzar tamaño HD controlado para las imágenes de logos locales */
+/* REGLA DE ORO: Filtros para unificar */
 .icon-group a img {
     width: 30px !important;
     height: 30px !important;
     object-fit: contain !important;
-    image-rendering: auto;
+    
+    /* Filtro para unificar: Escala de grises, brillo y contraste */
+    filter: grayscale(1) brightness(0.8) contrast(1.2); 
+    transition: all 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+/* Efecto al pasar el mouse (Hover) */
+.icon-group a:hover img {
+    /* Recuperan el color original de forma elegante al hacer hover */
+    filter: grayscale(0) brightness(1) contrast(1);
+    transform: scale(1.15); /* Un pequeño zoom para dar sensación de respuesta */
 }
 
 /* Tooltips */
