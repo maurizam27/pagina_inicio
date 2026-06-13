@@ -38,11 +38,15 @@
             </section>
 
             <section class="card widget-pomodoro">
-                <h3><i class='bx bx-timer'></i> Pomodoro</h3>
-                <div class="pomodoro-container">
-                    <p style="color: #718096; font-size: 0.9rem;">Próximamente...</p>
-                </div>
-            </section>
+    <h3><i class='bx bx-timer'></i> Pomodoro</h3>
+    <div class="pomodoro-timer">
+        <div id="timer-display">50:00</div>
+        <div class="pomodoro-controls">
+            <button onclick="startTimer()"><i class='bx bx-play'></i></button>
+            <button onclick="resetTimer()"><i class='bx bx-reset'></i></button>
+        </div>
+    </div>
+</section>
 
 
             <section class="card apps-1">
