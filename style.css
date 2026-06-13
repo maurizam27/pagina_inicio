@@ -352,3 +352,50 @@ body {
     background: rgba(255, 255, 255, 0.15);
 }
 }
+
+/* Contenedor del Pomodoro */
+.pomodoro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin-top: 10px;
+}
+
+/* El estilo de los números */
+.timer-text {
+    font-size: 3.2rem;
+    font-weight: 200;
+    color: #e2e8f0;
+    font-family: 'Segoe UI', monospace; /* Fuente limpia */
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+/* Botones circulares minimalistas */
+.pomodoro-controls {
+    display: flex;
+    gap: 15px;
+}
+
+.pomodoro-controls button {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #a0aec0;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.pomodoro-controls button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    transform: scale(1.05);
+}
