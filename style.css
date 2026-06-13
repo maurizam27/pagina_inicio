@@ -13,6 +13,7 @@ body {
     justify-content: center;
     align-items: center;
     overflow-x: hidden;
+    zoom: 1.15;
 }
 
 /* Contenedor adaptativo para formato horizontal */
@@ -90,9 +91,11 @@ body {
 
 .dashboard-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
-    grid-template-rows: minmax(200px, auto) minmax(220px, auto) minmax(220px, auto); /* 3 filas */
-    gap: 24px;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; /* Aumentamos el espacio entre tarjetas */
+    padding: 40px; /* Más aire en los bordes de la pantalla */
+    max-width: 1500px; /* Permitimos que crezca más en pantallas grandes */
+    margin: 0 auto;
 }
 
 /* BASE DE TODAS LAS TARJETAS (Recupera el estilo esmerilado de la captura anterior) */
@@ -102,8 +105,8 @@ body {
     backdrop-filter: blur(16px) !important;
     -webkit-backdrop-filter: blur(16px) !important;
     border: 1px solid rgba(255, 255, 255, 0.06) !important;
-    border-radius: 14px;
-    padding: 22px;
+    border-radius: 20px;
+    padding: 35px;
     transition: border-color 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -116,13 +119,14 @@ body {
 }
 
 .card h3 {
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     font-weight: 400;
     color: #a0aec0;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     gap: 8px;
+    opacity: 0.8;
 }
 
 /* ==========================================================================
@@ -319,80 +323,41 @@ body {
     opacity: 1; /* Se ilumina completamente al pasar el mouse */
 }
 
- .pomodoro-timer {
+ .widget-pomodoro {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    height: 100%;
+    text-align: center;
 }
 
 #timer-display {
-    font-size: 2.5rem;
-    font-weight: 200;
-    font-family: monospace;
+    font-size: 5rem; /* Aumentamos el tamaño drásticamente */
+    font-weight: 100;
     color: #ffffff;
+    font-family: 'Segoe UI Light', sans-serif;
+    margin: 10px 0;
+    text-shadow: 0 0 20px rgba(255,255,255,0.2); /* Efecto de brillo suave */
+}
+
+.pomodoro-controls {
+    display: flex;
+    gap: 20px;
 }
 
 .pomodoro-controls button {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: white;
-    padding: 8px 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.pomodoro-controls button:hover {
-    background: rgba(255, 255, 255, 0.15);
-}
-}
-
-/* Contenedor del Pomodoro */
-.pomodoro-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    margin-top: 10px;
-}
-
-/* El estilo de los números */
-.timer-text {
-    font-size: 3.2rem;
-    font-weight: 200;
-    color: #e2e8f0;
-    font-family: 'Segoe UI', monospace; /* Fuente limpia */
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-}
-
-/* Botones circulares minimalistas */
-.pomodoro-controls {
-    display: flex;
-    gap: 15px;
-}
-
-.pomodoro-controls button {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #a0aec0;
-    width: 45px;
-    height: 45px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 1.4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
+    font-size: 1.8rem;
+    transition: all 0.4s ease;
 }
 
 .pomodoro-controls button:hover {
-    background: rgba(255, 255, 255, 0.15);
-    color: #ffffff;
-    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
