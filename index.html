@@ -39,11 +39,16 @@
 
             <section class="card widget-pomodoro">
     <h3><i class='bx bx-timer'></i> Pomodoro</h3>
-    <div class="pomodoro-timer">
-        <div id="timer-display">50:00</div>
+    <div class="pomodoro-container">
+        <div id="timer-display" class="timer-text">25:00</div>
+        
         <div class="pomodoro-controls">
-            <button onclick="startTimer()"><i class='bx bx-play'></i></button>
-            <button onclick="resetTimer()"><i class='bx bx-reset'></i></button>
+            <button onclick="startTimer()" id="play-btn">
+                <i class='bx bx-play'></i>
+            </button>
+            <button onclick="resetTimer()" id="reset-btn">
+                <i class='bx bx-reset'></i>
+            </button>
         </div>
     </div>
 </section>
@@ -122,20 +127,23 @@
     }
 
     function startTimer() {
-        if (!isRunning) {
-            isRunning = true;
-            timer = setInterval(() => {
-                if (timeLeft > 0) {
-                    timeLeft--;
-                    updateDisplay();
-                } else {
-                    clearInterval(timer);
-                    isRunning = false;
-                    alert("¡Tiempo cumplido! Hora de un descanso.");
-                }
-            }, 1000);
-        }
+    if (!isRunning) {
+        isRunning = true;
+        // Cambiar color a un tono suave de acento cuando está corriendo
+        document.getElementById('timer-display').style.color = '#63b3ed'; 
+        timer = setInterval(() => {
+            if (timeLeft > 0) {
+                timeLeft--;
+                updateDisplay();
+            } else {
+                clearInterval(timer);
+                isRunning = false;
+                document.getElementById('timer-display').style.color = '#e2e8f0';
+                alert("¡Tiempo cumplido!");
+            }
+        }, 1000);
     }
+}
 
     function resetTimer() {
         clearInterval(timer);
