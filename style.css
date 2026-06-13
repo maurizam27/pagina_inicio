@@ -13,7 +13,6 @@ body {
     justify-content: center;
     align-items: center;
     overflow-x: hidden;
-    zoom: 1.15;
 }
 
 /* Contenedor adaptativo para formato horizontal */
