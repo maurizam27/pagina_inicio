@@ -21,7 +21,7 @@ body {
     max-width: 1300px;
     display: flex;
     flex-direction: column;
-    gap: 35px;
+    gap: 15px; /* Reducido de 35px a 15px para acercar todo */
     padding: 20px 0;
 }
 
@@ -55,11 +55,11 @@ body {
     margin-bottom: 20px;
 }
 
-/* Buscador adaptado a la celda izquierda */
+/* 1. Ajuste del Buscador (más ancho) */
 .search-box {
-    width: 100%;       /* Asegura que ocupe todo el ancho de su contenedor */
-    max-width: 300px;  /* Define un tamaño máximo para que no se vea desproporcionada */
-    margin: 10px auto; /* Centra la barra automáticamente */
+    width: 100%;
+    max-width: 500px; /* Aumentado de 300px a 500px */
+    margin: 20px auto;
 }
 
 .search-box form {
@@ -86,12 +86,13 @@ body {
    CONFIGURACIÓN DEL GRID 3x3 
    ========================================================================== */
 
+/* 4. Ajuste del Grid (menos espacio entre cards) */
 .dashboard-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
-    gap: 15px; /* Aumentamos el espacio entre tarjetas */
-    padding: 20px; /* Más aire en los bordes de la pantalla */
-    max-width: 1400px; /* Permitimos que crezca más en pantallas grandes */
+    gap: 10px; /* Reducido de 15px a 10px */
+    padding: 10px; /* Reducido de 20px a 10px */
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -100,14 +101,13 @@ body {
 .card {
     background: rgba(255, 255, 255, 0.02) !important;
     backdrop-filter: blur(16px) !important;
-    -webkit-backdrop-filter: blur(16px) !important;
     border: 1px solid rgba(255, 255, 255, 0.06) !important;
     border-radius: 15px;
-    padding: 20px;
+    padding: 15px; /* Reducido de 20px a 15px */
     transition: border-color 0.3s ease;
     display: flex;
     flex-direction: column;
-    /* ELIMINADO overflow: hidden para permitir que los tooltips sean visibles */
+    overflow: visible; /* Aseguramos que sea visible */
 }
 
 .card:hover {
