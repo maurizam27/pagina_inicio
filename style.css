@@ -269,12 +269,28 @@ body {
    AJUSTES PARA LA DISTRIBUCIÓN ESCALABLE 3x3
    ========================================================================== */
 
-/* Hace que la tarjeta de la agenda ocupe el espacio de 2 filas hacia abajo */
-.widget-calendar {
-    grid-row: span 2;
+/* ==========================================================================
+   COORDENADAS FIJAS PARA EL NUEVO MAPA 3x3
+   ========================================================================== */
+
+/* Fila 1: Obligamos a que dejen la primera columna libre (para alinearse con el reloj) */
+.widget-youtube {
+    grid-column: 2;
+    grid-row: 1;
 }
 
-/* Fuerza al contenedor del calendario a estirarse en todo el alto disponible */
+.widget-pomodoro {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+/* Fila 2 y 3: El Calendario se planta fijo en la columna 3 ocupando el alto restante */
+.widget-calendar {
+    grid-column: 3;
+    grid-row: 2 / span 2; /* Inicia en la fila 2 y se estira por 2 filas */
+}
+
+/* Forzar que el contenedor interno ocupe el espacio */
 .calendar-container {
     flex-grow: 1;
     display: flex;
@@ -282,5 +298,5 @@ body {
 
 .calendar-container iframe {
     width: 100%;
-    height: 100% !important; /* Reemplaza el alto fijo por el 100% de la tarjeta */
+    height: 100% !important;
 }
