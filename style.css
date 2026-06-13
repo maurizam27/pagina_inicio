@@ -298,10 +298,13 @@ body {
 
 .media-container {
     width: 100%;
-    flex-grow: 1; /* Fuerza al contenedor a ocupar el espacio sobrante de la tarjeta */
+    /* En lugar de estirarse a lo loco, forzamos la proporción perfecta de video */
+    aspect-ratio: 16 / 9; 
     border-radius: 10px;
-    overflow: hidden; /* Asegura que el iframe respete los bordes curvos */
-    margin-top: 5px;
+    overflow: hidden; 
+    margin-top: 12px;
+    background: #000; /* Fondo negro por si el video tarda en cargar */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Un ligero sombreado para darle profundidad */
 }
 
 .media-container iframe {
