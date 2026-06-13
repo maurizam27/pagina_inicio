@@ -57,7 +57,9 @@ body {
 
 /* Buscador adaptado a la celda izquierda */
 .search-box {
-    width: 100%;
+    width: 100%;       /* Asegura que ocupe todo el ancho de su contenedor */
+    max-width: 300px;  /* Define un tamaño máximo para que no se vea desproporcionada */
+    margin: 10px auto; /* Centra la barra automáticamente */
 }
 
 .search-box form {
@@ -70,6 +72,9 @@ body {
     border-radius: 20px; /* Igual al de las tarjetas */
     backdrop-filter: blur(16px);
     transition: border-color 0.3s ease;
+    width: 100%;       /* Fuerza al campo de texto a llenar el contenedor */
+    padding: 10px 20px;
+    box-sizing: border-box;
 }
 
 .search-box input:focus {
