@@ -55,10 +55,11 @@ body {
     margin-bottom: 20px;
 }
 
-/* Buscador centrado */
+/* Buscador adaptado a la celda izquierda */
 .search-box input {
-    width: 380px;
-    padding: 11px 20px;
+    width: 100%;
+    max-width: 300px; /* Reducido para que no se desborde */
+    padding: 10px 16px;
     border-radius: 24px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     background: rgba(255, 255, 255, 0.04);
@@ -70,7 +71,7 @@ body {
 }
 
 .search-box input:focus {
-    width: 440px;
+    max-width: 320px; /* Se expande un poco menos al hacer clic */
     outline: none;
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(255, 255, 255, 0.2);
@@ -120,6 +121,16 @@ body {
 /* ==========================================================================
    MAPEO DE COORDENADAS DEL GRID 
    ========================================================================== */
+/* Fila 1 */
+.widget-clock {
+    grid-column: 1; /* A la izquierda */
+    grid-row: 1;    /* Arriba */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 
 /* Fila 1 (Columna 1 vacía para balancear el reloj) */
 .widget-youtube {
