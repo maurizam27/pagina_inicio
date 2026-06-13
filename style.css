@@ -264,3 +264,23 @@ body {
 .calendar-container iframe:hover {
     opacity: 1;
 }
+
+/* ==========================================================================
+   AJUSTES PARA LA DISTRIBUCIÓN ESCALABLE 3x3
+   ========================================================================== */
+
+/* Hace que la tarjeta de la agenda ocupe el espacio de 2 filas hacia abajo */
+.widget-calendar {
+    grid-row: span 2;
+}
+
+/* Fuerza al contenedor del calendario a estirarse en todo el alto disponible */
+.calendar-container {
+    flex-grow: 1;
+    display: flex;
+}
+
+.calendar-container iframe {
+    width: 100%;
+    height: 100% !important; /* Reemplaza el alto fijo por el 100% de la tarjeta */
+}
