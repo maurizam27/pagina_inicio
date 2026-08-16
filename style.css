@@ -373,3 +373,19 @@ body {
     background: rgba(255, 255, 255, 0.2);
     transform: scale(1.1); /* Efecto de crecimiento al pasar el mouse */
 }
+
+/* Limpieza total de estilos de YouTube para Spotify */
+.widget-youtube .media-container {
+    width: 100% !important;
+    height: 152px !important;
+    aspect-ratio: auto !important; /* IMPORTANTE: Esto elimina el cuadrado 16/9 */
+    background: transparent !important;
+    overflow: hidden !important;
+    margin-top: 15px !important;
+    border-radius: 12px !important;
+    box-shadow: none !important;
+}
+
+.widget-youtube {
+    padding-bottom: 20px !important; /* Ajusta este valor si quieres más o menos aire debajo */
+}
