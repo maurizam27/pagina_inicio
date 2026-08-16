@@ -303,33 +303,28 @@ body {
    ESTILOS DEL REPRODUCTOR DE SPOTIFY
    ========================================================================== */
 
-/* Bloque forzado para Spotify */
 .widget-youtube {
     display: flex !important;
     flex-direction: column !important;
-    /* Eliminamos el espacio sobrante */
-    padding-bottom: 20px !important; 
 }
 
 .widget-youtube .media-container {
     width: 100% !important;
-    height: 152px !important; /* Altura mágica de Spotify */
-    min-height: 152px !important;
-    max-height: 152px !important;
+    height: 352px !important; /* Altura oficial grande de Spotify */
+    min-height: 352px !important;
     aspect-ratio: auto !important;
     background: transparent !important;
     overflow: hidden !important;
     border: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    margin-top: 12px !important;
+    border-radius: 12px !important;
 }
 
 .widget-youtube iframe {
     width: 100% !important;
-    height: 152px !important;
+    height: 352px !important;
     border: none !important;
     display: block !important;
-};
 }
 
 .widget-pomodoro {
