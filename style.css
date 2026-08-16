@@ -300,7 +300,7 @@ body {
 }
 
 /* ==========================================================================
-   ESTILOS DEL REPRODUCTOR DE YOUTUBE
+   ESTILOS DEL REPRODUCTOR DE SPOTIFY
    ========================================================================== */
 
 .widget-youtube {
@@ -308,27 +308,25 @@ body {
     flex-direction: column;
 }
 
+/* Contenedor adaptado exclusivamente para Spotify a 152px exactos */
 .media-container {
-    width: 100%;
-    /* En lugar de estirarse a lo loco, forzamos la proporción perfecta de video */
-    aspect-ratio: 16 / 9; 
-    border-radius: 10px;
+    width: 100% !important;
+    height: 152px !important;
+    min-height: 152px !important;
+    aspect-ratio: unset !important; /* Desactivamos el formato de video 16:9 */
+    border-radius: 12px;
     overflow: hidden; 
     margin-top: 12px;
-    background: #000; /* Fondo negro por si el video tarda en cargar */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Un ligero sombreado para darle profundidad */
+    background: transparent !important;
+    box-shadow: none !important;
 }
 
 .media-container iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    opacity: 0.85; /* Ligera transparencia para mantener la estética oscura */
-    transition: opacity 0.3s ease;
-}
-
-.media-container iframe:hover {
-    opacity: 1; /* Se ilumina completamente al pasar el mouse */
+    width: 100% !important;
+    height: 152px !important;
+    min-height: 152px !important;
+    border: none !important;
+    opacity: 1 !important;
 }
 
 .widget-pomodoro {
@@ -374,21 +372,4 @@ body {
 .pomodoro-controls button:hover {
     background: rgba(255, 255, 255, 0.2);
     transform: scale(1.1); /* Efecto de crecimiento al pasar el mouse */
-}
-
-/* Ajuste preciso para que el widget de Spotify llene toda la tarjeta sin bordes extra */
-.spotify-box {
-    width: 100%;
-    height: 100%;
-    min-height: 152px; /* Altura ideal que pide el iframe de Spotify */
-    background: transparent !important;
-    display: flex;
-    flex-direction: column;
-}
-
-.spotify-box iframe {
-    width: 100%;
-    height: 100%;
-    min-height: 152px;
-    border: none;
 }
