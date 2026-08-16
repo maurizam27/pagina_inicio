@@ -303,15 +303,22 @@ body {
    ESTILOS DEL REPRODUCTOR DE SPOTIFY
    ========================================================================== */
 
+/* ==========================================================================
+   CORRECCIÓN DEFINITIVA DE LA TARJETA SPOTIFY EN EL GRID
+   ========================================================================== */
+
 .widget-youtube {
     display: flex !important;
     flex-direction: column !important;
+    grid-row: span 2 !important; /* Hacemos que ocupe dos filas para que no rompa el diseño horizontal */
+    background: rgba(255, 255, 255, 0.02) !important;
 }
 
 .widget-youtube .media-container {
     width: 100% !important;
-    height: 352px !important; /* Altura oficial grande de Spotify */
+    height: 352px !important;
     min-height: 352px !important;
+    max-height: 352px !important;
     aspect-ratio: auto !important;
     background: transparent !important;
     overflow: hidden !important;
