@@ -21,7 +21,6 @@ function updateClock() {
 
     clockElement.textContent = `${hours}:${minutes}`;
     
-    // Ejecuta la actualización de fecha
     updateDate();
 }
 
@@ -33,7 +32,6 @@ function updateDate() {
     const options = { weekday: 'long', day: 'numeric', month: 'long' };
     let formattedDate = now.toLocaleDateString('es-ES', options);
     
-    // Primera letra en mayúscula
     formattedDate = formattedDate.charAt(0).toUpperCase() + formattedDate.slice(1);
     dateElement.textContent = `Hoy es ${formattedDate}`;
 }
